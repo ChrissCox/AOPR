@@ -31,13 +31,13 @@ def generate_launch_description():
     #             )]), launch_arguments={'use_sim_time': 'true'}.items()
     # )
 
-    # twist_mux_params = os.path.join(get_package_share_directory(package_name),'config','twist_mux.yaml')
-    # twist_mux = Node(
-    #         package="twist_mux",
-    #         executable="twist_mux",
-    #         parameters=[twist_mux_params, {'use_sim_time': True}],
-    #         remappings=[('/cmd_vel_out','/diff_cont/cmd_vel_unstamped')]
-    #     )
+    twist_mux_params = os.path.join(get_package_share_directory(package_name),'config','twist_mux.yaml')
+    twist_mux = Node(
+            package="twist_mux",
+            executable="twist_mux",
+            parameters=[twist_mux_params, {'use_sim_time': True}],
+            remappings=[('/cmd_vel_out','/diff_cont/cmd_vel_unstamped')]
+        )
 
 
     default_world = os.path.join(
@@ -93,11 +93,11 @@ def generate_launch_description():
         ]
     )
 
-    # ros_gz_image_bridge = Node(
-    #     package="ros_gz_image",
-    #     executable="image_bridge",
-    #     arguments=["/camera/image_raw"]
-    # )
+    ros_gz_image_bridge = Node(
+        package="ros_gz_image",
+        executable="image_bridge",
+        arguments=["/camera/image_raw"]
+    )
 
 
 
@@ -123,12 +123,12 @@ def generate_launch_description():
     return LaunchDescription([
         rsp,
         # joystick,
-        # twist_mux,
+        twist_mux,
         world_arg,
         gazebo,
         spawn_entity,
         # diff_drive_spawner,
         # joint_broad_spawner,
-        ros_gz_bridge
-        # ros_gz_image_bridge
+        ros_gz_bridge,
+        ros_gz_image_bridge
     ])

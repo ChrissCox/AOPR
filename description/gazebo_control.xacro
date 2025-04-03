@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
     <gazebo>
         <plugin name="gz::sim::systems::DiffDrive" filename="gz-sim-diff-drive-system">
@@ -15,7 +15,7 @@
 
 
             <!-- Limits -->
-            <max_wheel_torque>200</max_wheel_torque>
+            <!-- <max_wheel_torque>200</max_wheel_torque> -->
             <max_linear_acceleration>0.33</max_linear_acceleration>
 
             <!-- Input -->
