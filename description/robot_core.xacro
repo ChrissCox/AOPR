@@ -61,6 +61,11 @@
         
     </link>
 
+    <gazebo reference="chassis">
+        <material>white</material>
+        <static>false</static>
+    </gazebo>
+
 
     <!-- TOP LEFT WHEEL LINK-->
 
@@ -89,6 +94,10 @@
         </xacro:inertial_cylinder>
     
     </link>
+
+    <gazebo reference="top_left_wheel">
+        <material>blue</material>
+    </gazebo>
 
 
     <!-- TOP RIGHT WHEEL LINK-->
@@ -119,6 +128,10 @@
     
     </link>
 
+    <gazebo reference="top_right_wheel">
+        <material>blue</material>
+    </gazebo>
+
 
     <!-- BOTTOM LEFT WHEEL LINK-->
 
@@ -148,6 +161,10 @@
     
     </link>
 
+    <gazebo reference="bottom_left_wheel">
+        <material>blue</material>
+    </gazebo>
+
 
     <!-- BOTTOM RIGHT WHEEL LINK-->
 
@@ -176,6 +193,10 @@
         </xacro:inertial_cylinder>
     
     </link>
+
+    <gazebo reference="bottom_right_wheel">
+        <material>blue</material>
+    </gazebo>
 
 
 
