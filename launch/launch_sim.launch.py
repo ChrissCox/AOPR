@@ -82,16 +82,16 @@ def generate_launch_description():
     # )
 
 
-    # bridge_params = os.path.join(get_package_share_directory(package_name),'config','gz_bridge.yaml')
-    # ros_gz_bridge = Node(
-    #     package="ros_gz_bridge",
-    #     executable="parameter_bridge",
-    #     arguments=[
-    #         '--ros-args',
-    #         '-p',
-    #         f'config_file:={bridge_params}',
-    #     ]
-    # )
+    bridge_params = os.path.join(get_package_share_directory(package_name),'config','gz_bridge.yaml')
+    ros_gz_bridge = Node(
+        package="ros_gz_bridge",
+        executable="parameter_bridge",
+        arguments=[
+            '--ros-args',
+            '-p',
+            f'config_file:={bridge_params}',
+        ]
+    )
 
     # ros_gz_image_bridge = Node(
     #     package="ros_gz_image",
@@ -126,9 +126,9 @@ def generate_launch_description():
         # twist_mux,
         world_arg,
         gazebo,
-        spawn_entity
+        spawn_entity,
         # diff_drive_spawner,
         # joint_broad_spawner,
-        # ros_gz_bridge,
+        ros_gz_bridge
         # ros_gz_image_bridge
     ])

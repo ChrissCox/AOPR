@@ -1,0 +1,1 @@
+/home/chris/AOPR_ws/src/AOPR/build/AOPR/ament_cmake_environment_hooks/local_setup.bash

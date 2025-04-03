@@ -1,0 +1,4 @@
+source;share/AOPR/local_setup.bash
+source;share/AOPR/local_setup.dsv
+source;share/AOPR/local_setup.sh
+source;share/AOPR/local_setup.zsh
