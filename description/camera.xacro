@@ -45,13 +45,25 @@
                     <height>480</height>
                 </image>
                 <clip>
-                    <near>0.05</near>
-                    <far>8.0</far>
+                    <near>0.1</near>
+                    <far>15</far>
                 </clip>
+                <noise>
+                    <type>gaussian</type>
+                    <!-- Noise is sampled independently per pixel on each frame.
+                        That pixel's noise value is added to each of its color
+                        channels, which at that point lie in the range [0,1]. -->
+                    <mean>0.0</mean>
+                    <stddev>0.007</stddev>
+                </noise>
+                <optical_frame_id>camera_link_optical</optical_frame_id>
+                <camera_info_topic>camera/camera_info</camera_info_topic>
             </camera>
-            <topic>camera/image_raw</topic>
-            <gz_frame_id>camera_link_optical</gz_frame_id>
-        </sensor>
-    </gazebo>
+                <always_on>1</always_on>
+                <update_rate>20</update_rate>
+                <visualize>true</visualize>
+                <topic>camera/image</topic>
+            </sensor>
+        </gazebo>
 
 </robot>
