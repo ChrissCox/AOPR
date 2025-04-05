@@ -36,7 +36,7 @@
         <image>
           <width>320</width>
           <height>240</height>
-          <!-- <format>L16</format> -->
+          <format>B8G8R8</format>
         </image>
         <clip>
           <near>0.1</near>
@@ -49,7 +49,7 @@
       <always_on>1</always_on>
       <update_rate>20</update_rate>
       <visualize>true</visualize>
-      <topic>camera_depth</topic>
+      <topic>camera/depth/image_raw</topic>
       <gz_frame_id>camera_link</gz_frame_id>
     </sensor>
     <sensor name="camera" type="camera">
@@ -65,12 +65,12 @@
           <far>20</far>
         </clip>
         <optical_frame_id>camera_link_optical</optical_frame_id>
-        <camera_info_topic>camera_info</camera_info_topic>
+        <camera_info_topic>camera/camera_info</camera_info_topic>
       </camera>
       <always_on>1</always_on>
       <update_rate>20</update_rate>
       <visualize>true</visualize>
-      <topic>camera</topic>
+      <topic>camera/image_raw</topic>
     </sensor>
   </gazebo>
 

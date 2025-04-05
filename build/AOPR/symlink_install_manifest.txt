@@ -10,6 +10,7 @@
 /home/chris/AOPR_ws/src/AOPR/install/AOPR/share/AOPR/description/robot.urdf.xacro
 /home/chris/AOPR_ws/src/AOPR/install/AOPR/share/AOPR/description/robot_core.xacro
 /home/chris/AOPR_ws/src/AOPR/install/AOPR/share/AOPR/description/ros2_control.xacro
+/home/chris/AOPR_ws/src/AOPR/install/AOPR/share/AOPR/launch/joystick.launch.py
 /home/chris/AOPR_ws/src/AOPR/install/AOPR/share/AOPR/launch/launch_sim.launch.py
 /home/chris/AOPR_ws/src/AOPR/install/AOPR/share/AOPR/launch/rsp.launch.py
 /home/chris/AOPR_ws/src/AOPR/install/AOPR/share/AOPR/worlds/empty.world
