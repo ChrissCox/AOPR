@@ -25,11 +25,11 @@ def generate_launch_description():
                 )]), launch_arguments={'use_sim_time': 'true', 'use_ros2_control': 'true'}.items()
     )
 
-    # joystick = IncludeLaunchDescription(
-    #             PythonLaunchDescriptionSource([os.path.join(
-    #                 get_package_share_directory(package_name),'launch','joystick.launch.py'
-    #             )]), launch_arguments={'use_sim_time': 'true'}.items()
-    # )
+    joystick = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                    get_package_share_directory(package_name),'launch','joystick.launch.py'
+                )]), launch_arguments={'use_sim_time': 'true'}.items()
+    )
 
     twist_mux_params = os.path.join(get_package_share_directory(package_name),'config','twist_mux.yaml')
     twist_mux = Node(
@@ -69,37 +69,27 @@ def generate_launch_description():
                         output='screen')
 
 
-    # diff_drive_spawner = Node(
-    #     package="controller_manager",
-    #     executable="spawner",
-    #     arguments=["diff_cont"],
-    # )
+    diff_drive_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["diff_cont"],
+    )
 
-    # joint_broad_spawner = Node(
-    #     package="controller_manager",
-    #     executable="spawner",
-    #     arguments=["joint_broad"],
-    # )
+    joint_broad_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["joint_broad"],
+    )
 
 
-    # bridge_params = os.path.join(get_package_share_directory(package_name),'config','gz_bridge.yaml')
+    bridge_params = os.path.join(get_package_share_directory(package_name),'config','gz_bridge.yaml')
     gz_bridge_node = Node(
         package="ros_gz_bridge",
         executable="parameter_bridge",
         arguments=[
-            "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",
-            "/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist",
-            "/odom@nav_msgs/msg/Odometry@gz.msgs.Odometry",
-            "/joint_states@sensor_msgs/msg/JointState@gz.msgs.Model",
-            #"/tf@tf2_msgs/msg/TFMessage@gz.msgs.Pose_V",
-            #"/camera/image@sensor_msgs/msg/Image@gz.msgs.Image",
-            "/camera/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo",
-            "/imu@sensor_msgs/msg/Imu@gz.msgs.IMU",
-            "/navsat@sensor_msgs/msg/NavSatFix@gz.msgs.NavSat",
-            "/scan@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan",
-            "/scan/points@sensor_msgs/msg/PointCloud2@gz.msgs.PointCloudPacked",
-            "/camera/depth_image@sensor_msgs/msg/Image@gz.msgs.Image",
-            "/camera/points@sensor_msgs/msg/PointCloud2@gz.msgs.PointCloudPacked",
+            '--ros-args',
+            '-p',
+            f'config_file:={bridge_params}',
         ],
         output="screen",
         parameters=[
@@ -138,13 +128,13 @@ def generate_launch_description():
     # Launch them all!
     return LaunchDescription([
         rsp,
-        # joystick,
+        joystick,
         twist_mux,
         world_arg,
         gazebo,
         spawn_entity,
-        # diff_drive_spawner,
-        # joint_broad_spawner,
+        diff_drive_spawner,
+        joint_broad_spawner,
         gz_bridge_node,
         ros_gz_image_bridge,
     ])
