@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://github.com/osrf/gazebo_models/blob/master/spectrum_plane/materials/textures/spectrum.png
+HostUrl=https://raw.githubusercontent.com/osrf/gazebo_models/refs/heads/master/spectrum_plane/materials/textures/spectrum.png

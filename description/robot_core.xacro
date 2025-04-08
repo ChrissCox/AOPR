@@ -13,11 +13,11 @@
     </material>
 
     <material name="green">
-        <color rgba="0 1 0 1"/>
+        <color rgba="0 0.6 0 1"/>
     </material>
 
-    <material name="red">
-        <color rgba="1 0 0 1"/>
+    <material name="yellow">
+        <color rgba="0.8 0.8 0 1"/>
     </material>
 
     <material name="blue">
@@ -43,7 +43,6 @@
         <parent link="base_link"/>
         <child link="chassis_link"/>
         <origin xyz="0.1 0 0.05" rpy="0 0 0"/>
-    
     </joint>
 
     <link name="chassis_link">
@@ -63,7 +62,6 @@
         <xacro:inertial_box mass="18" x="0.6" y="0.6" z="0.13">
             <origin xyz="0.15 0 0.09" rpy="0 0 0"/>
         </xacro:inertial_box>
-        
     </link>
 
     <gazebo reference="chassis">
