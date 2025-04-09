@@ -8,6 +8,6 @@ def generate_launch_description():
             executable='aopr_node.py',
             name='aopr_node',
             output='screen',
-            parameters=[{'serial_port': '/dev/ttyV0', 'baud_rate': 9600}]
+            parameters=[{'serial_port': '/dev/ttyAMA0', 'baud_rate': 9600}]
         )
     ])

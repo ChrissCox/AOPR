@@ -3,12 +3,13 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
 import serial
+import time
 
 class AOPRNode(Node):
     def __init__(self):
         super().__init__('aopr_node')
         # Declare parameters for the serial port and baud rate
-        self.declare_parameter('serial_port', '/dev/ttyV0')
+        self.declare_parameter('serial_port', '/dev/ttyAMA0')
         self.declare_parameter('baud_rate', 9600)
         serial_port = self.get_parameter('serial_port').value
         baud_rate = self.get_parameter('baud_rate').value
@@ -44,11 +45,11 @@ class AOPRNode(Node):
         #   0 (stop)         -> 64
         #  +1 (full forward) -> 127
         left_cmd  = 64 + int(63 * left_speed)
-        right_cmd = 64 + int(63 * right_speed)
+        right_cmd = 64 + int(63 * right_speed + 192)
 
         # Clip the values between 1 and 127
         left_cmd = max(1, min(127, left_cmd))
-        right_cmd = max(1, min(127, right_cmd))
+        right_cmd = max(128, min(255, right_cmd))
 
         # Build & send the commands for each channel (simplified serial)
         # Channel 1: command byte is 0 (0x00) or 1 depending on your Sabertooth version
@@ -57,8 +58,9 @@ class AOPRNode(Node):
         try:
             m1_cmd = bytes([0x00, left_cmd])    # Motor 1 (Channel 1)
             m2_cmd = bytes([0x04, right_cmd])   # Motor 2 (Channel 2)
-
+            
             self.ser.write(m1_cmd)
+            time.sleep(0.01)
             self.ser.write(m2_cmd)
             self.get_logger().info(f'M1: {left_cmd}, M2: {right_cmd}')
         except Exception as e:
