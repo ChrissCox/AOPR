@@ -8,7 +8,7 @@ class AOPRNode(Node):
     def __init__(self):
         super().__init__('aopr_node')
         # Declare parameters for the serial port and baud rate
-        self.declare_parameter('serial_port', '/dev/ttyUSB0')
+        self.declare_parameter('serial_port', '/dev/ttyV0')
         self.declare_parameter('baud_rate', 9600)
         serial_port = self.get_parameter('serial_port').value
         baud_rate = self.get_parameter('baud_rate').value
