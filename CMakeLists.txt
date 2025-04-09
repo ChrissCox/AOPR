@@ -37,7 +37,7 @@ find_package(geometry_msgs REQUIRED)
 
 install(
   DIRECTORY config description launch worlds
-  DESTINATION share/AOPR}
+  DESTINATION share/${PROJECT_NAME}/
 )
 
 install(PROGRAMS
