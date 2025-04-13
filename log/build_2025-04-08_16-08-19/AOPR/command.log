@@ -1,0 +1,4 @@
+Invoking command in '/home/chris/AOPR_ws/src/AOPR/build/AOPR': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/chris/AOPR_ws/install/block_tracker:/opt/ros/jazzy /usr/bin/cmake --build /home/chris/AOPR_ws/src/AOPR/build/AOPR -- -j24 -l24
+Invoked command in '/home/chris/AOPR_ws/src/AOPR/build/AOPR' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/chris/AOPR_ws/install/block_tracker:/opt/ros/jazzy /usr/bin/cmake --build /home/chris/AOPR_ws/src/AOPR/build/AOPR -- -j24 -l24
+Invoking command in '/home/chris/AOPR_ws/src/AOPR/build/AOPR': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/chris/AOPR_ws/install/block_tracker:/opt/ros/jazzy /usr/bin/cmake --install /home/chris/AOPR_ws/src/AOPR/build/AOPR
+Invoked command in '/home/chris/AOPR_ws/src/AOPR/build/AOPR' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/chris/AOPR_ws/install/block_tracker:/opt/ros/jazzy /usr/bin/cmake --install /home/chris/AOPR_ws/src/AOPR/build/AOPR

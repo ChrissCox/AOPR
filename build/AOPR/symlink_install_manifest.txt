@@ -2,6 +2,7 @@
 /home/chris/AOPR_ws/src/AOPR/install/AOPR/share/AOPR/config/gaz_ros2_ctl_use_sim.yaml
 /home/chris/AOPR_ws/src/AOPR/install/AOPR/share/AOPR/config/gz_bridge.yaml
 /home/chris/AOPR_ws/src/AOPR/install/AOPR/share/AOPR/config/my_controllers.yaml
+/home/chris/AOPR_ws/src/AOPR/install/AOPR/share/AOPR/config/twist_mux.yaml
 /home/chris/AOPR_ws/src/AOPR/install/AOPR/share/AOPR/config/view_robot_rviz.rviz
 /home/chris/AOPR_ws/src/AOPR/install/AOPR/share/AOPR/description/camera.xacro
 /home/chris/AOPR_ws/src/AOPR/install/AOPR/share/AOPR/description/gazebo_control.xacro
@@ -10,6 +11,7 @@
 /home/chris/AOPR_ws/src/AOPR/install/AOPR/share/AOPR/description/robot.urdf.xacro
 /home/chris/AOPR_ws/src/AOPR/install/AOPR/share/AOPR/description/robot_core.xacro
 /home/chris/AOPR_ws/src/AOPR/install/AOPR/share/AOPR/description/ros2_control.xacro
+/home/chris/AOPR_ws/src/AOPR/install/AOPR/share/AOPR/launch/block_tracker.launch.py
 /home/chris/AOPR_ws/src/AOPR/install/AOPR/share/AOPR/launch/joystick.launch.py
 /home/chris/AOPR_ws/src/AOPR/install/AOPR/share/AOPR/launch/launch_sim.launch.py
 /home/chris/AOPR_ws/src/AOPR/install/AOPR/share/AOPR/launch/rsp.launch.py
