@@ -32,9 +32,18 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+find_package(rclpy REQUIRED)
+find_package(geometry_msgs REQUIRED)
+
 install(
   DIRECTORY config description launch worlds
-  DESTINATION share/${PROJECT_NAME}
+  DESTINATION share/${PROJECT_NAME}/
 )
+
+install(PROGRAMS
+  aopr_node.py
+  DESTINATION lib/AOPR
+)
+
 
 ament_package()

@@ -1,0 +1,2 @@
+Invoking command in '/home/james/ros2_ws/src/AOPR/build/AOPR': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/james/ros2_ws/src/AOPR/build/AOPR -- -j16 -l16
+Invoked command in '/home/james/ros2_ws/src/AOPR/build/AOPR' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/james/ros2_ws/src/AOPR/build/AOPR -- -j16 -l16
