@@ -40,21 +40,17 @@ class AOPRNode(Node):
         left_speed = linear - angular
         right_speed = linear + angular
 
-        # Convert speeds from -1..1 to Sabertooth's 1..127 range
-        #  -1 (full reverse) -> ~1
-        #   0 (stop)         -> 64
-        #  +1 (full forward) -> 127
-        left_cmd  = 64 + int(63 * left_speed)
-        right_cmd = 64 + int(63 * right_speed + 192)
+        # Convert speeds from -1..1 to Sabertooth's range:
+        # For Motor 1 (left): mapping from [-1, 1] to [1, 127] with 0 --> 64.
+        left_cmd = int(63 * left_speed + 64)
+        # For Motor 2 (right): mapping from [-1, 1] to [128, 255] with 0 --> 192.
+        right_cmd = int(63 * right_speed + 192)
 
-        # Clip the values between 1 and 127
+        # Clamp the values to their respective ranges
         left_cmd = max(1, min(127, left_cmd))
         right_cmd = max(128, min(255, right_cmd))
 
         # Build & send the commands for each channel (simplified serial)
-        # Channel 1: command byte is 0 (0x00) or 1 depending on your Sabertooth version
-        # Channel 2: command byte is 4 (0x04) or 5
-        # Example using command bytes 0x00 for M1, 0x04 for M2:
         try:
             m1_cmd = bytes([0x00, left_cmd])    # Motor 1 (Channel 1)
             m2_cmd = bytes([0x04, right_cmd])   # Motor 2 (Channel 2)

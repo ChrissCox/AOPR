@@ -40,6 +40,11 @@ install(
   DESTINATION share/${PROJECT_NAME}/
 )
 
+install (PROGRAMS
+  test_image_publisher.py
+  DESTINATION lib/AOPR
+)
+
 install(PROGRAMS
   aopr_node.py
   DESTINATION lib/AOPR
