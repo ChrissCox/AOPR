@@ -1,0 +1,2 @@
+Invoking command in '/root/second_ws/build/gazebo_ros2_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /root/second_ws/src/gazebo_ros2_control/gazebo_ros2_control -DCMAKE_INSTALL_PREFIX=/root/second_ws/install/gazebo_ros2_control
+Invoked command in '/root/second_ws/build/gazebo_ros2_control' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /root/second_ws/src/gazebo_ros2_control/gazebo_ros2_control -DCMAKE_INSTALL_PREFIX=/root/second_ws/install/gazebo_ros2_control

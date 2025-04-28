@@ -1,0 +1,46 @@
+[0.018s] Invoking command in '/root/second_ws/build/gazebo_ros2_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /root/second_ws/src/gazebo_ros2_control/gazebo_ros2_control -DCMAKE_INSTALL_PREFIX=/root/second_ws/install/gazebo_ros2_control
+[0.336s] -- The C compiler identification is GNU 13.3.0
+[1.329s] -- The CXX compiler identification is GNU 13.3.0
+[2.225s] -- Detecting C compiler ABI info
+[2.612s] -- Detecting C compiler ABI info - done
+[2.625s] -- Check for working C compiler: /usr/bin/cc - skipped
+[2.626s] -- Detecting C compile features
+[2.627s] -- Detecting C compile features - done
+[2.828s] -- Detecting CXX compiler ABI info
+[3.237s] -- Detecting CXX compiler ABI info - done
+[3.249s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[3.249s] -- Detecting CXX compile features
+[3.250s] -- Detecting CXX compile features - done
+[3.258s] -- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[3.460s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[3.653s] -- Found angles: 1.16.0 (/opt/ros/jazzy/share/angles/cmake)
+[3.662s] -- Found controller_manager: 4.27.0 (/opt/ros/jazzy/share/controller_manager/cmake)
+[3.955s] -- Found rosidl_generator_c: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[3.987s] -- Found rosidl_generator_cpp: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[4.026s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.065s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[4.230s] -- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[4.239s] -- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[4.373s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[4.639s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[4.795s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[6.128s] -- Found control_toolbox: 4.0.1 (/opt/ros/jazzy/share/control_toolbox/cmake)
+[7.700s] [31mCMake Error at CMakeLists.txt:8 (find_package):
+[7.701s]   By not providing "Findgazebo_dev.cmake" in CMAKE_MODULE_PATH this project
+[7.701s]   has asked CMake to find a package configuration file provided by
+[7.701s]   "gazebo_dev", but CMake did not find one.
+[7.701s] 
+[7.701s]   Could not find a package configuration file provided by "gazebo_dev" with
+[7.701s]   any of the following names:
+[7.701s] 
+[7.701s]     gazebo_devConfig.cmake
+[7.701s]     gazebo_dev-config.cmake
+[7.701s] 
+[7.701s]   Add the installation prefix of "gazebo_dev" to CMAKE_PREFIX_PATH or set
+[7.702s]   "gazebo_dev_DIR" to a directory containing one of the above files.  If
+[7.702s]   "gazebo_dev" provides a separate development package or SDK, be sure it has
+[7.702s]   been installed.
+[7.702s] 
+[7.702s] [0m
+[7.702s] -- Configuring incomplete, errors occurred!
+[7.715s] Invoked command in '/root/second_ws/build/gazebo_ros2_control' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /root/second_ws/src/gazebo_ros2_control/gazebo_ros2_control -DCMAKE_INSTALL_PREFIX=/root/second_ws/install/gazebo_ros2_control
