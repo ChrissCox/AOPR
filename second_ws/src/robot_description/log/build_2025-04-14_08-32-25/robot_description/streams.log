@@ -1,0 +1,52 @@
+[0.009s] Invoking command in '/root/second_ws/src/robot_description/build/robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /root/second_ws/src/robot_description -DCMAKE_INSTALL_PREFIX=/root/second_ws/src/robot_description/install/robot_description
+[0.131s] -- The C compiler identification is GNU 13.3.0
+[0.656s] -- The CXX compiler identification is GNU 13.3.0
+[1.142s] -- Detecting C compiler ABI info
+[1.362s] -- Detecting C compiler ABI info - done
+[1.369s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.369s] -- Detecting C compile features
+[1.370s] -- Detecting C compile features - done
+[1.454s] -- Detecting CXX compiler ABI info
+[1.685s] -- Detecting CXX compiler ABI info - done
+[1.692s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.693s] -- Detecting CXX compile features
+[1.693s] -- Detecting CXX compile features - done
+[1.697s] -- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.823s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.930s] -- Found ament_lint_auto: 0.17.1 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[2.025s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.025s] -- Configured cppcheck include dirs: 
+[2.025s] -- Configured cppcheck exclude dirs and/or files: 
+[2.027s] -- Added test 'flake8' to check Python code syntax and style conventions
+[2.027s] -- Configured 'flake8' exclude dirs and/or files: 
+[2.028s] -- Added test 'lint_cmake' to check CMake code style
+[2.030s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[2.035s] -- Added test 'uncrustify' to check C / C++ code style
+[2.035s] -- Configured uncrustify additional arguments: 
+[2.036s] -- Added test 'xmllint' to check XML markup files
+[2.038s] -- Configuring done (2.0s)
+[2.043s] -- Generating done (0.0s)
+[2.044s] -- Build files have been written to: /root/second_ws/src/robot_description/build/robot_description
+[2.048s] Invoked command in '/root/second_ws/src/robot_description/build/robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /root/second_ws/src/robot_description -DCMAKE_INSTALL_PREFIX=/root/second_ws/src/robot_description/install/robot_description
+[2.049s] Invoking command in '/root/second_ws/src/robot_description/build/robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /root/second_ws/src/robot_description/build/robot_description -- -j16 -l16
+[2.083s] Invoked command in '/root/second_ws/src/robot_description/build/robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /root/second_ws/src/robot_description/build/robot_description -- -j16 -l16
+[2.109s] Invoking command in '/root/second_ws/src/robot_description/build/robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /root/second_ws/src/robot_description/build/robot_description
+[2.116s] -- Install configuration: ""
+[2.117s] -- Installing: /root/second_ws/src/robot_description/install/robot_description/share/ament_index/resource_index/package_run_dependencies/robot_description
+[2.118s] -- Installing: /root/second_ws/src/robot_description/install/robot_description/share/ament_index/resource_index/parent_prefix_path/robot_description
+[2.119s] -- Installing: /root/second_ws/src/robot_description/install/robot_description/share/robot_description/environment/ament_prefix_path.sh
+[2.119s] -- Installing: /root/second_ws/src/robot_description/install/robot_description/share/robot_description/environment/ament_prefix_path.dsv
+[2.119s] -- Installing: /root/second_ws/src/robot_description/install/robot_description/share/robot_description/environment/path.sh
+[2.119s] -- Installing: /root/second_ws/src/robot_description/install/robot_description/share/robot_description/environment/path.dsv
+[2.119s] -- Installing: /root/second_ws/src/robot_description/install/robot_description/share/robot_description/local_setup.bash
+[2.119s] -- Installing: /root/second_ws/src/robot_description/install/robot_description/share/robot_description/local_setup.sh
+[2.119s] -- Installing: /root/second_ws/src/robot_description/install/robot_description/share/robot_description/local_setup.zsh
+[2.120s] -- Installing: /root/second_ws/src/robot_description/install/robot_description/share/robot_description/local_setup.dsv
+[2.120s] -- Installing: /root/second_ws/src/robot_description/install/robot_description/share/robot_description/package.dsv
+[2.120s] -- Installing: /root/second_ws/src/robot_description/install/robot_description/share/ament_index/resource_index/packages/robot_description
+[2.121s] -- Installing: /root/second_ws/src/robot_description/install/robot_description/share/robot_description/cmake/robot_descriptionConfig.cmake
+[2.121s] -- Installing: /root/second_ws/src/robot_description/install/robot_description/share/robot_description/cmake/robot_descriptionConfig-version.cmake
+[2.122s] -- Installing: /root/second_ws/src/robot_description/install/robot_description/share/robot_description/package.xml
+[2.122s] -- Installing: /root/second_ws/src/robot_description/install/robot_description/share/robot_description/urdf
+[2.122s] -- Installing: /root/second_ws/src/robot_description/install/robot_description/share/robot_description/urdf/arm.xacro
+[2.124s] Invoked command in '/root/second_ws/src/robot_description/build/robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /root/second_ws/src/robot_description/build/robot_description

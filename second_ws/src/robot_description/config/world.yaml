@@ -1,0 +1,16 @@
+# config/nav_bridge.yaml
+# Top‑level must be a YAML list (each entry begins with “-”)
+
+# Bridge the ROS /clock topic into Gazebo
+- ros_topic_name: "/clock"
+  gz_topic_name: "/clock"
+  ros_type_name: "rosgraph_msgs/msg/Clock"
+  gz_type_name: "ignition.msgs.Time"
+  direction: ROS_TO_GZ        # or BIDIRECTIONAL if you want both ways
+
+# Bridge the Gazebo /camera/image into ROS
+- ros_topic_name: "/camera/image"
+  gz_topic_name: "/camera/image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "ignition.msgs.Image"
+  direction: GZ_TO_ROS

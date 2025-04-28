@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="lewansoul_arm">
+  <!-- Dimensions -->
+  <xacro:property name="base_height"      value="0.05"/>
+  <xacro:property name="shoulder_length" value="0.125"/>
+  <xacro:property name="elbow_length"    value="0.11"/>
+  <xacro:property name="wrist_length"   value="0.1"/>
+  <xacro:property name="gripper_size"   value = "0.1"/>
+  
+  <!-- Inertial parameters -->
+  <xacro:property name="mass_base" value="0.1"/>
+  <xacro:property name="mass_link" value="0.1"/>
+  <xacro:property name="ixx"       value="0.03"/>
+  <xacro:property name="iyy"       value="0.03"/>
+  <xacro:property name="izz"       value="0.03"/>
+
+  <!-- Base link with inertial -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 ${base_height/2}" rpy="0 0 0"/>
+      <mass value="${mass_base}"/>
+      <inertia
+        ixx="${ixx}" ixy="0.0" ixz="0.0"
+        iyy="${iyy}" iyz="0.0"
+        izz="${izz}"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.2 0.2 ${base_height}"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- Joint 1 -->
+  <joint name="base_joint" type="revolute">
+    <origin xyz="0 0 ${base_height}" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child  link="shoulder_link"/>
+    <axis  xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14" effort="10" velocity="1.0"/>
+  </joint>
+  <transmission name="base_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="base_joint">
+      <hardwareInterface>position</hardwareInterface>
+    </joint>
+    <actuator name="base_motor">
+      <hardwareInterface>position</hardwareInterface>
+    </actuator>
+  </transmission>
+  <!-- Shoulder link with inertial -->
+  <link name="shoulder_link">
+    <inertial>
+      <origin xyz="0 0 ${shoulder_length}" rpy="0 0 0"/>
+      <mass value="${mass_link}"/>
+      <inertia
+        ixx="${ixx}" ixy="0.0" ixz="0.0"
+        iyy="${iyy}" iyz="0.0"
+        izz="${izz}"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="${shoulder_length}" radius="0.05"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- Joint 2 -->
+  <joint name="shoulder_joint" type="revolute">
+    <origin xyz="0 0 ${shoulder_length}" rpy="0 0 0"/>
+    <parent link="shoulder_link"/>
+    <child  link="elbow_link"/>
+    <axis  xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="1.0"/>
+  </joint>
+  <transmission name="shoulder_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="shoulder_joint">
+      <hardwareInterface>position</hardwareInterface>
+    </joint>
+    <actuator name="shoulder_motor">
+      <hardwareInterface>position</hardwareInterface>
+    </actuator>
+  </transmission>
+  <!-- Elbow link with inertial -->
+  <link name="elbow_link">
+    <inertial>
+      <origin xyz="0 0 ${elbow_length/2}" rpy="0 0 0"/>
+      <mass value="${mass_link}"/>
+      <inertia
+        ixx="${ixx}" ixy="0.0" ixz="0.0"
+        iyy="${iyy}" iyz="0.0"
+        izz="${izz}"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="${elbow_length}" radius="0.04"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0 1 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- Joint 3 -->
+  <joint name="elbow_joint" type="revolute">
+    <origin xyz="0 0 ${elbow_length}" rpy="0 0 0"/>
+    <parent link="elbow_link"/>
+    <child  link="wrist_pitch_link"/>
+    <axis  xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="1.0"/>
+  </joint>
+  <transmission name="elbow_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="elbow_joint">
+      <hardwareInterface>position</hardwareInterface>
+    </joint>
+    <actuator name="elbow_motor">
+      <hardwareInterface>position</hardwareInterface>
+    </actuator>
+  </transmission>
+  <!-- Wrist Pitch Link -->
+  <link name="wrist_pitch_link">
+  <inertial>
+      <origin xyz="0 0 ${base_height/2}" rpy="0 0 0"/>
+      <mass value="${mass_base}"/>
+      <inertia
+        ixx="${ixx}" ixy="0.0" ixz="0.0"
+        iyy="${iyy}" iyz="0.0"
+        izz="${izz}"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder length="${wrist_length}" radius="0.03"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+  
+  <!-- Joint 4: Wrist Pitch Joint (servo 4) -->
+  <joint name="wrist_pitch_joint" type="revolute">
+    <origin xyz="0 0 ${wrist_length}" rpy="0 0 0"/>
+    <parent link="wrist_pitch_link"/>
+    <child link="wrist_roll_link"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="5" velocity="1.0"/>
+  </joint>
+    <transmission name="wrist_pitch_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="wrist_pitch_joint">
+      <hardwareInterface>position</hardwareInterface>
+    </joint>
+    <actuator name="wrist_pitch_motor">
+      <hardwareInterface>position</hardwareInterface>
+    </actuator>
+  </transmission>
+  <!-- Wrist Roll Link -->
+  <link name="wrist_roll_link">
+  <inertial>
+      <origin xyz="0 0 ${base_height/2}" rpy="0 0 0"/>
+      <mass value="${mass_base}"/>
+      <inertia
+        ixx="${ixx}" ixy="0.0" ixz="0.0"
+        iyy="${iyy}" iyz="0.0"
+        izz="${izz}"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <!-- A shorter link representing the wrist roll -->
+        <cylinder length="${wrist_length * 0.5}" radius="0.025"/>
+      </geometry>
+      <material name="yellow">
+        <color rgba="1 1 0 1"/>
+      </material>
+    </visual>
+  </link>
+  
+  <!-- Joint 5: Wrist Roll Joint (servo 5) -->
+  <joint name="wrist_roll_joint" type="revolute">
+    <origin xyz="0 0 ${wrist_length * 0.5}" rpy="0 0 0"/>
+    <parent link="wrist_roll_link"/>
+    <child link="gripper_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14" effort="5" velocity="1.0"/>
+  </joint>
+    <transmission name="wrist_roll_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="wrist_roll_joint">
+      <hardwareInterface>position</hardwareInterface>
+    </joint>
+    <actuator name="wrist_roll_motor">
+      <hardwareInterface>position</hardwareInterface>
+    </actuator>
+  </transmission>
+  <!-- Gripper Link -->
+  <link name="gripper_link">
+  <inertial>
+      <origin xyz="0 0 ${base_height/2}" rpy="0 0 0"/>
+      <mass value="${mass_base}"/>
+      <inertia
+        ixx="${ixx}" ixy="0.0" ixz="0.0"
+        iyy="${iyy}" iyz="0.0"
+        izz="${izz}"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="${gripper_size} 0.02 0.02"/>
+      </geometry>
+      <material name="orange">
+        <color rgba="1 0.5 0 1"/>
+      </material>
+    </visual>
+  </link>
+  
+  <!-- Joint 6: Gripper Joint (servo 1) -->
+  <!-- Depending on your design, you might want to control the gripper fingers separately.
+       Here we simply add a joint to orient the gripper. -->
+  <joint name="gripper_joint" type="revolute">
+    <origin xyz="0 ${gripper_size/2} 0" rpy="0 0 0"/>
+    <parent link="gripper_link"/>
+    <child link="gripper_end"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-0.5" upper="0.5" effort="2" velocity="1.0"/>
+  </joint>
+    <transmission name="gripper_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="gripper_joint">
+      <hardwareInterface>position</hardwareInterface>
+    </joint>
+    <actuator name="gripper_motor">
+      <hardwareInterface>position</hardwareInterface>
+    </actuator>
+  </transmission>
+  <!-- Gripper End: Represents the end-effector for planning -->
+  <link name="gripper_end">
+  <inertial>
+      <origin xyz="0 0 ${base_height/2}" rpy="0 0 0"/>
+      <mass value="${mass_base}"/>
+      <inertia
+        ixx="${ixx}" ixy="0.0" ixz="0.0"
+        iyy="${iyy}" iyz="0.0"
+        izz="${izz}"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.02"/>
+      </geometry>
+      <material name="magenta">
+        <color rgba="1 0 1 1"/>
+      </material>
+    </visual>
+  </link>
+  
+
+<gazebo>
+  <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so"/>
+</gazebo>
+</robot>

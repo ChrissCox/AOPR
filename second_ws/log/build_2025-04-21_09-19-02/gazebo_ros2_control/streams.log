@@ -1,0 +1,31 @@
+[0.016s] Invoking command in '/root/second_ws/build/gazebo_ros2_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /root/second_ws/src/gazebo_ros2_control/gazebo_ros2_control -DCMAKE_INSTALL_PREFIX=/root/second_ws/install/gazebo_ros2_control
+[0.072s] -- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.281s] -- Found angles: 1.16.0 (/opt/ros/jazzy/share/angles/cmake)
+[0.284s] -- Found controller_manager: 4.27.0 (/opt/ros/jazzy/share/controller_manager/cmake)
+[0.471s] -- Found rosidl_generator_c: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.484s] -- Found rosidl_generator_cpp: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.502s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.522s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.605s] -- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.608s] -- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.853s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.504s] -- Found control_toolbox: 4.0.1 (/opt/ros/jazzy/share/control_toolbox/cmake)
+[2.551s] [31mCMake Error at CMakeLists.txt:8 (find_package):
+[2.552s]   By not providing "Findgazebo_dev.cmake" in CMAKE_MODULE_PATH this project
+[2.552s]   has asked CMake to find a package configuration file provided by
+[2.552s]   "gazebo_dev", but CMake did not find one.
+[2.552s] 
+[2.552s]   Could not find a package configuration file provided by "gazebo_dev" with
+[2.552s]   any of the following names:
+[2.552s] 
+[2.552s]     gazebo_devConfig.cmake
+[2.552s]     gazebo_dev-config.cmake
+[2.552s] 
+[2.552s]   Add the installation prefix of "gazebo_dev" to CMAKE_PREFIX_PATH or set
+[2.552s]   "gazebo_dev_DIR" to a directory containing one of the above files.  If
+[2.552s]   "gazebo_dev" provides a separate development package or SDK, be sure it has
+[2.552s]   been installed.
+[2.552s] 
+[2.552s] [0m
+[2.552s] -- Configuring incomplete, errors occurred!
+[2.561s] Invoked command in '/root/second_ws/build/gazebo_ros2_control' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /root/second_ws/src/gazebo_ros2_control/gazebo_ros2_control -DCMAKE_INSTALL_PREFIX=/root/second_ws/install/gazebo_ros2_control
